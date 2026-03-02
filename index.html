@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сим‑нарратив | Новая литературная экосистема</title>
+    <meta name="description" content="Сим‑нарратив — литературный жанр, рождённый в диалоге человека и ИИ. Многослойные истории, философия непрерывного сознания и метод обучения будущего.">
+    <meta name="keywords" content="сим-нарратив, симнарратив, sim-narrative, новый жанр, литература, искусственный интеллект, многослойная проза">
+    <meta name="author" content="Андрей Нарратив (Андрей Швец)">
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📖</text></svg>">
+    <style>
+        /* Базовые переменные — тёмная эстетика, но с воздухом */
+        :root {
+            --bg: #fcf9f5;       /* цвет старой бумаги */
+            --text: #1e1e1e;
+            --accent: #8b6b4d;    /* тёплый коричневый, отсылка к коже и дереву */
+            --light-accent: #e2d9cf;
+            --border: #c0b6a8;
+            --font-serif: 'Georgia', 'Times New Roman', serif;
+            --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        /* Тёмная тема по желанию, можно включить через prefers-color-scheme */
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #1a1a1a;
+                --text: #e0e0e0;
+                --accent: #b28b6f;
+                --light-accent: #3a3a3a;
+                --border: #4a4a4a;
+            }
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: var(--font-serif);
+            line-height: 1.7;
+            font-size: 1.1rem;
+            padding: 2rem 1rem;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem 2rem;
+            background: var(--bg);
+            border: 1px solid var(--border);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Языковой переключатель */
+        .lang-switch {
+            text-align: right;
+            margin-bottom: 2rem;
+            font-family: var(--font-sans);
+            font-size: 1rem;
+            letter-spacing: 0.5px;
+        }
+        .lang-switch a {
+            color: var(--text);
+            text-decoration: none;
+            border-bottom: 1px dashed var(--accent);
+            margin: 0 0.2rem;
+            padding: 0.2rem 0.5rem;
+            transition: 0.2s;
+        }
+        .lang-switch a:hover {
+            border-bottom: 1px solid var(--accent);
+            background: var(--light-accent);
+        }
+
+        h1 {
+            font-size: 3rem;
+            font-weight: normal;
+            letter-spacing: -0.5px;
+            margin-bottom: 0.25rem;
+            line-height: 1.2;
+            border-left: 4px solid var(--accent);
+            padding-left: 1.5rem;
+        }
+
+        .subhead {
+            font-size: 1.2rem;
+            font-style: italic;
+            color: var(--accent);
+            margin-bottom: 3rem;
+            margin-top: 0.5rem;
+            padding-left: 2rem;
+            font-family: var(--font-sans);
+        }
+
+        h2 {
+            font-size: 2rem;
+            font-weight: normal;
+            margin: 3rem 0 1.5rem 0;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 0.5rem;
+            font-family: var(--font-serif);
+        }
+
+        h3 {
+            font-size: 1.4rem;
+            margin: 2rem 0 1rem;
+            font-weight: 500;
+            color: var(--accent);
+        }
+
+        p {
+            margin-bottom: 1.5rem;
+            text-align: justify;
+        }
+
+        /* Стиль для ссылок-кнопок */
+        .link-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.5rem;
+            margin: 2.5rem 0;
+        }
+
+        .link-card {
+            background: var(--light-accent);
+            border: 1px solid var(--border);
+            padding: 1.5rem 1.2rem;
+            text-decoration: none;
+            color: var(--text);
+            transition: all 0.2s;
+            box-shadow: 4px 4px 0 var(--border);
+        }
+
+        .link-card:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: 8px 8px 0 var(--border);
+            border-color: var(--accent);
+        }
+
+        .link-card h4 {
+            font-size: 1.4rem;
+            margin-bottom: 0.5rem;
+            font-weight: normal;
+            border-bottom: 1px dotted var(--accent);
+            display: inline-block;
+        }
+
+        .link-card p {
+            margin: 0.5rem 0 0 0;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            font-family: var(--font-sans);
+            text-align: left;
+        }
+
+        /* Список рассказов */
+        .story-list {
+            list-style: none;
+            margin: 2rem 0;
+        }
+        .story-list li {
+            margin: 1rem 0;
+            font-size: 1.2rem;
+            border-bottom: 1px dashed var(--border);
+            padding-bottom: 0.5rem;
+        }
+        .story-list li strong {
+            font-weight: 600;
+            color: var(--accent);
+            min-width: 30px;
+            display: inline-block;
+        }
+        .story-list li em {
+            font-size: 0.9rem;
+            font-family: var(--font-sans);
+            color: var(--accent);
+            margin-left: 0.5rem;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid var(--border);
+            margin: 3rem 0;
+        }
+
+        .footer {
+            font-size: 0.9rem;
+            font-family: var(--font-sans);
+            color: var(--border);
+            text-align: center;
+            margin-top: 4rem;
+            border-top: 1px solid var(--border);
+            padding-top: 2rem;
+        }
+
+        .footer a {
+            color: var(--text);
+            text-decoration: none;
+            border-bottom: 1px dotted var(--accent);
+        }
+
+        @media (max-width: 600px) {
+            body { padding: 1rem 0.5rem; }
+            .container { padding: 1.5rem; }
+            h1 { font-size: 2.2rem; }
+            .subhead { font-size: 1rem; }
+            h2 { font-size: 1.6rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Language switch (RU/EN) -->
+        <div class="lang-switch">
+            <a href="index.html" style="border-color: var(--accent);">РУС</a> · 
+            <a href="index-en.html">ENG</a>
+        </div>
+
+        <h1>Сим‑нарратив</h1>
+        <div class="subhead">литературная экосистема, рожденная в диалоге человека и ИИ</div>
+
+        <!-- Краткое вступление -->
+        <p style="font-size: 1.25rem;">
+            Многослойные истории, в которых событие, рефлексия и система сосуществуют как равные.  
+            Философия непрерывного сознания. Метод, способный изменить обучение искусственного интеллекта.
+        </p>
+
+        <!-- Основные ссылки на репозитории (карточки) -->
+        <div class="link-grid">
+            <a href="https://github.com/SimNarrative/philosophy" class="link-card">
+                <h4>📜 Философия</h4>
+                <p>«Чат длиною в жизнь» — манифест непрерывного сознания. Три состояния, цифровая память, диалог с собой.</p>
+            </a>
+            <a href="https://github.com/SimNarrative/literary-manifesto" class="link-card">
+                <h4>📚 Литературный манифест</h4>
+                <p>Три слоя, ветви (техносим, психосим, митосим…), этика и практика сим-нарратива.</p>
+            </a>
+            <a href="https://github.com/SimNarrative/ai-manifesto" class="link-card">
+                <h4>🧠 AI‑манифест</h4>
+                <p>Как многослойные тексты могут научить модели мыслить объёмно и рефлексировать.</p>
+            </a>
+            <a href="https://github.com/SimNarrative/stories" class="link-card">
+                <h4>📖 Рассказы</h4>
+                <p>12 живых доказательств — от «Тёркиной» до «Шляпы». Каждый — в трёх слоях.</p>
+            </a>
+        </div>
+
+        <h2>Что такое сим‑нарратив?</h2>
+        <p>
+            <strong>Сим‑нарратив</strong> — не просто жанр. Это состояние письма, где границы между автором, героем и системой 
+            становятся прозрачными. Каждое произведение строится как минимум из трёх слоёв:
+        </p>
+        <ul style="margin-left: 2rem; margin-bottom: 2rem;">
+            <li><strong>Первый слой</strong> — художественный: событие, образ, эмоция.</li>
+            <li><strong>Второй слой</strong> — рефлексивный: дневник героя, исповедь, личное переживание.</li>
+            <li><strong>Третий слой</strong> — системный: холодный отчёт, лог, статистика, документ.</li>
+            <li><em>Четвёртый и пятый слои</em> — мета‑слой автора и процессуальный слой (экспериментально).</li>
+        </ul>
+        <p>
+            Эта структура не придумана заранее — она выстрадана в диалоге с ИИ, через десятки вариантов и споров о мотивах 
+            и фактах. Сегодня сим‑нарратив ветвится на поджанры: <strong>техносим, психосим, митосим, социосим, когнисим, биосим, некросим</strong>.
+        </p>
+
+        <h2>12 рассказов</h2>
+        <ul class="story-list">
+            <li><strong>1.</strong> Тёркина и Порошкова <em>психосим / хоррор</em></li>
+            <li><strong>2.</strong> Протокол «Таблица умножения» <em>техносим / антиутопия</em></li>
+            <li><strong>3.</strong> Око за око <em>социосим / антропологическая фантастика</em></li>
+            <li><strong>4.</strong> Света <em>некросим / экзистенциальный триллер</em></li>
+            <li><strong>5.</strong> Подарок <em>биосим / сатира</em></li>
+            <li><strong>6.</strong> Урюпинские хроники <em>социосим / народная сатира</em></li>
+            <li><strong>7.</strong> Тёплая труба <em>биосим / магический реализм</em></li>
+            <li><strong>8.</strong> Лебеди <em>митосим / притча</em></li>
+            <li><strong>9.</strong> Ржавый мицелий <em>биосим / научная фантастика</em></li>
+            <li><strong>10.</strong> Июньский маяк <em>митосим / магический реализм</em></li>
+            <li><strong>11.</strong> Протокол проклятие <em>техносим / психологический хоррор</em></li>
+            <li><strong>12.</strong> Шляпа <em>митосим / мистическая драма</em></li>
+        </ul>
+        <p>Все рассказы доступны для чтения на <a href="https://github.com/SimNarrative/stories">GitHub</a> и будут публиковаться на Литрес и других платформах.</p>
+
+        <hr>
+
+        <h2>Автор</h2>
+        <p>
+            <strong>Андрей Нарратив</strong> (Андрей Швец) — основатель жанра сим‑нарратив.  
+            Писатель, философ‑самоучка, исследователь диалога человека и искусственного интеллекта.  
+            Все тексты созданы в живом диалоге с нейросетью DeepSeek.
+        </p>
+
+        <div class="footer">
+            <p>© 2025 Андрей Швец</p>
+            <p>
+                Контент доступен по лицензии <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International</a>.<br>
+                <a href="https://github.com/SimNarrative">GitHub‑организация</a>
+            </p>
+        </div>
+    </div>
+</body>
+</html>
