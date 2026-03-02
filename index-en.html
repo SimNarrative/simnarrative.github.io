@@ -3,12 +3,219 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sim-narrative | A New Literary Ecosystem</title>
-    <meta name="description" content="Sim-narrative — a literary genre born from dialogue between human and AI. Multi-layered stories, philosophy of continuous consciousness, and a method for future AI training.">
-    <link rel="stylesheet" href="style.css"> <!-- если хочешь тот же стиль -->
+    <title>Sim‑narrative | A New Literary Ecosystem</title>
+    <meta name="description" content="Sim‑narrative — a literary genre born from dialogue between human and AI. Multi‑layered stories, philosophy of continuous consciousness, and a method for future AI training.">
+    <meta name="keywords" content="sim-narrative, simnarrative, new genre, literature, artificial intelligence, multi-layered prose">
+    <meta name="author" content="Andrey Narrativ (Andrey Shvets)">
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📖</text></svg>">
+    <style>
+        /* Базовые переменные — тёмная эстетика, но с воздухом */
+        :root {
+            --bg: #fcf9f5;       /* цвет старой бумаги */
+            --text: #1e1e1e;
+            --accent: #8b6b4d;    /* тёплый коричневый, отсылка к коже и дереву */
+            --light-accent: #e2d9cf;
+            --border: #c0b6a8;
+            --font-serif: 'Georgia', 'Times New Roman', serif;
+            --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        /* Тёмная тема по желанию, можно включить через prefers-color-scheme */
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #1a1a1a;
+                --text: #e0e0e0;
+                --accent: #b28b6f;
+                --light-accent: #3a3a3a;
+                --border: #4a4a4a;
+            }
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: var(--font-serif);
+            line-height: 1.7;
+            font-size: 1.1rem;
+            padding: 2rem 1rem;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem 2rem;
+            background: var(--bg);
+            border: 1px solid var(--border);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Языковой переключатель */
+        .lang-switch {
+            text-align: right;
+            margin-bottom: 2rem;
+            font-family: var(--font-sans);
+            font-size: 1rem;
+            letter-spacing: 0.5px;
+        }
+        .lang-switch a {
+            color: var(--text);
+            text-decoration: none;
+            border-bottom: 1px dashed var(--accent);
+            margin: 0 0.2rem;
+            padding: 0.2rem 0.5rem;
+            transition: 0.2s;
+        }
+        .lang-switch a:hover {
+            border-bottom: 1px solid var(--accent);
+            background: var(--light-accent);
+        }
+
+        h1 {
+            font-size: 3rem;
+            font-weight: normal;
+            letter-spacing: -0.5px;
+            margin-bottom: 0.25rem;
+            line-height: 1.2;
+            border-left: 4px solid var(--accent);
+            padding-left: 1.5rem;
+        }
+
+        .subhead {
+            font-size: 1.2rem;
+            font-style: italic;
+            color: var(--accent);
+            margin-bottom: 3rem;
+            margin-top: 0.5rem;
+            padding-left: 2rem;
+            font-family: var(--font-sans);
+        }
+
+        h2 {
+            font-size: 2rem;
+            font-weight: normal;
+            margin: 3rem 0 1.5rem 0;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 0.5rem;
+            font-family: var(--font-serif);
+        }
+
+        h3 {
+            font-size: 1.4rem;
+            margin: 2rem 0 1rem;
+            font-weight: 500;
+            color: var(--accent);
+        }
+
+        p {
+            margin-bottom: 1.5rem;
+            text-align: justify;
+        }
+
+        /* Стиль для ссылок-кнопок */
+        .link-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.5rem;
+            margin: 2.5rem 0;
+        }
+
+        .link-card {
+            background: var(--light-accent);
+            border: 1px solid var(--border);
+            padding: 1.5rem 1.2rem;
+            text-decoration: none;
+            color: var(--text);
+            transition: all 0.2s;
+            box-shadow: 4px 4px 0 var(--border);
+        }
+
+        .link-card:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: 8px 8px 0 var(--border);
+            border-color: var(--accent);
+        }
+
+        .link-card h4 {
+            font-size: 1.4rem;
+            margin-bottom: 0.5rem;
+            font-weight: normal;
+            border-bottom: 1px dotted var(--accent);
+            display: inline-block;
+        }
+
+        .link-card p {
+            margin: 0.5rem 0 0 0;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            font-family: var(--font-sans);
+            text-align: left;
+        }
+
+        /* Список рассказов */
+        .story-list {
+            list-style: none;
+            margin: 2rem 0;
+        }
+        .story-list li {
+            margin: 1rem 0;
+            font-size: 1.2rem;
+            border-bottom: 1px dashed var(--border);
+            padding-bottom: 0.5rem;
+        }
+        .story-list li strong {
+            font-weight: 600;
+            color: var(--accent);
+            min-width: 30px;
+            display: inline-block;
+        }
+        .story-list li em {
+            font-size: 0.9rem;
+            font-family: var(--font-sans);
+            color: var(--accent);
+            margin-left: 0.5rem;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid var(--border);
+            margin: 3rem 0;
+        }
+
+        .footer {
+            font-size: 0.9rem;
+            font-family: var(--font-sans);
+            color: var(--border);
+            text-align: center;
+            margin-top: 4rem;
+            border-top: 1px solid var(--border);
+            padding-top: 2rem;
+        }
+
+        .footer a {
+            color: var(--text);
+            text-decoration: none;
+            border-bottom: 1px dotted var(--accent);
+        }
+
+        @media (max-width: 600px) {
+            body { padding: 1rem 0.5rem; }
+            .container { padding: 1.5rem; }
+            h1 { font-size: 2.2rem; }
+            .subhead { font-size: 1rem; }
+            h2 { font-size: 1.6rem; }
+        }
+    </style>
 </head>
 <body>
     <div class="container">
+        <!-- Language switch (EN/RU) -->
         <div class="lang-switch">
             <a href="index.html">РУС</a> · 
             <a href="index-en.html" style="border-color: var(--accent);">ENG</a>
@@ -17,6 +224,13 @@
         <h1>Sim‑narrative</h1>
         <div class="subhead">a literary ecosystem born from dialogue between human and AI</div>
 
+        <!-- Brief introduction -->
+        <p style="font-size: 1.25rem;">
+            Multi‑layered stories where event, reflection, and system coexist as equals.<br>
+            Philosophy of continuous consciousness. A method that could transform AI training.
+        </p>
+
+        <!-- Main links to repositories (cards) -->
         <div class="link-grid">
             <a href="https://github.com/SimNarrative/philosophy" class="link-card">
                 <h4>📜 Philosophy</h4>
@@ -24,11 +238,11 @@
             </a>
             <a href="https://github.com/SimNarrative/literary-manifesto" class="link-card">
                 <h4>📚 Literary Manifesto</h4>
-                <p>Three layers, branches (technosym, psychosym, mythosym…), ethics and practice of sim-narrative.</p>
+                <p>Three layers, branches (technosym, psychosym, mythosym…), ethics and practice of sim‑narrative.</p>
             </a>
             <a href="https://github.com/SimNarrative/ai-manifesto" class="link-card">
                 <h4>🧠 AI Manifesto</h4>
-                <p>How multi-layered texts can teach models to think volumetrically and reflect.</p>
+                <p>How multi‑layered texts can teach models to think volumetrically and reflect.</p>
             </a>
             <a href="https://github.com/SimNarrative/stories" class="link-card">
                 <h4>📖 Stories</h4>
@@ -38,18 +252,40 @@
 
         <h2>What is sim‑narrative?</h2>
         <p>
-            <strong>Sim‑narrative</strong> is not just a genre. It is a state of writing where boundaries between author, character, and system become transparent. Each work consists of at least three layers:
+            <strong>Sim‑narrative</strong> is not just a genre. It is a state of writing where boundaries between author, character, and system become transparent. Each work is built from at least three layers:
         </p>
-        <ul>
+        <ul style="margin-left: 2rem; margin-bottom: 2rem;">
             <li><strong>First layer</strong> — artistic: event, image, emotion.</li>
             <li><strong>Second layer</strong> — reflective: character's diary, confession, personal experience.</li>
             <li><strong>Third layer</strong> — systemic: cold report, log, statistics, document.</li>
             <li><em>Fourth and fifth layers</em> — author's meta‑layer and procedural layer (experimental).</li>
         </ul>
+        <p>
+            This structure was not invented in advance — it was forged in dialogue with AI, through dozens of iterations and arguments about motives and facts. Today, sim‑narrative branches into subgenres: <strong>technosym, psychosym, mythosym, sociosym, cognisym, biosym, necrosym</strong>.
+        </p>
+
+        <h2>12 stories</h2>
+        <ul class="story-list">
+            <li><strong>1.</strong> Tyorkina and Poroshkova <em>psychosym / horror</em></li>
+            <li><strong>2.</strong> The "Multiplication Table" Protocol <em>technosym / dystopia</em></li>
+            <li><strong>3.</strong> An Eye for an Eye <em>sociosym / anthropological fiction</em></li>
+            <li><strong>4.</strong> Sveta <em>necrosym / existential thriller</em></li>
+            <li><strong>5.</strong> The Gift <em>biosym / satire</em></li>
+            <li><strong>6.</strong> Uryupinsk Chronicles <em>sociosym / folk satire</em></li>
+            <li><strong>7.</strong> The Warm Pipe <em>biosym / magical realism</em></li>
+            <li><strong>8.</strong> Swans <em>mythosym / parable</em></li>
+            <li><strong>9.</strong> Rusty Mycelium <em>biosym / science fiction</em></li>
+            <li><strong>10.</strong> June Lighthouse <em>mythosym / magical realism</em></li>
+            <li><strong>11.</strong> The Curse Protocol <em>technosym / psychological horror</em></li>
+            <li><strong>12.</strong> The Hat <em>mythosym / mystical drama</em></li>
+        </ul>
+        <p>All stories are available for reading on <a href="https://github.com/SimNarrative/stories">GitHub</a> and will be published on Litres and other platforms.</p>
+
+        <hr>
 
         <h2>Author</h2>
         <p>
-            <strong>Andrey Narrativ</strong> (Andrey Shvets) — founder of the sim‑narrative genre.  
+            <strong>Andrey Narrativ</strong> (Andrey Shvets) — founder of the sim‑narrative genre.<br>
             Writer, self‑taught philosopher, researcher of human‑AI dialogue. All texts created in dialogue with DeepSeek AI.
         </p>
 
