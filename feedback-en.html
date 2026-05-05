@@ -1,1 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback — Sim‑narrative</title>
+    <meta name="description" content="Feedback from narrators and readers about Andrey Narrativ's stories and the sim‑narrative method.">
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📖</text></svg>">
+    <style>
+        /* Базовые переменные — тёмная эстетика, но с воздухом */
+        :root {
+            --bg: #fcf9f5;
+            --text: #1e1e1e;
+            --accent: #8b6b4d;
+            --light-accent: #e2d9cf;
+            --border: #c0b6a8;
+            --font-serif: 'Georgia', 'Times New Roman', serif;
+            --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
 
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #1a1a1a;
+                --text: #e0e0e0;
+                --accent: #b28b6f;
+                --light-accent: #3a3a3a;
+                --border: #4a4a4a;
+            }
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: var(--font-serif);
+            line-height: 1.7;
+            font-size: 1.1rem;
+            padding: 2rem 1rem;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem 2rem;
+            background: var(--bg);
+            border: 1px solid var(--border);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Горизонтальное меню */
+        .main-nav {
+            margin-bottom: 2rem;
+            font-family: var(--font-sans);
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 0.5rem;
+        }
+        .main-nav a {
+            margin-right: 1.5rem;
+            text-decoration: none;
+            color: var(--text);
+        }
+        .main-nav a.active {
+            color: var(--accent);
+            border-bottom: 2px solid var(--accent);
+            padding-bottom: 0.3rem;
+        }
+
+        .lang-switch {
+            text-align: right;
+            margin-bottom: 2rem;
+            font-family: var(--font-sans);
+            font-size: 1rem;
+            letter-spacing: 0.5px;
+        }
+        .lang-switch a {
+            color: var(--text);
+            text-decoration: none;
+            border-bottom: 1px dashed var(--accent);
+            margin: 0 0.2rem;
+            padding: 0.2rem 0.5rem;
+            transition: 0.2s;
+        }
+        .lang-switch a:hover {
+            border-bottom: 1px solid var(--accent);
+            background: var(--light-accent);
+        }
+
+        h1 {
+            font-size: 3rem;
+            font-weight: normal;
+            letter-spacing: -0.5px;
+            margin-bottom: 0.25rem;
+            line-height: 1.2;
+            border-left: 4px solid var(--accent);
+            padding-left: 1.5rem;
+        }
+
+        .subhead {
+            font-size: 1.2rem;
+            font-style: italic;
+            color: var(--accent);
+            margin-bottom: 3rem;
+            margin-top: 0.5rem;
+            padding-left: 2rem;
+            font-family: var(--font-sans);
+        }
+
+        .feedback-item {
+            margin: 2rem 0;
+            padding: 1.5rem;
+            background: var(--light-accent);
+            border-left: 4px solid var(--accent);
+            border-radius: 4px;
+        }
+        .feedback-text {
+            font-style: italic;
+            margin-bottom: 0.5rem;
+        }
+        .feedback-author {
+            font-family: var(--font-sans);
+            font-size: 0.9rem;
+            color: var(--accent);
+            text-align: right;
+        }
+        hr {
+            margin: 2rem 0;
+            border: none;
+            border-top: 1px solid var(--border);
+        }
+        .footer {
+            font-size: 0.9rem;
+            font-family: var(--font-sans);
+            color: var(--border);
+            text-align: center;
+            margin-top: 4rem;
+            border-top: 1px solid var(--border);
+            padding-top: 2rem;
+        }
+        .footer a {
+            color: var(--text);
+            text-decoration: none;
+            border-bottom: 1px dotted var(--accent);
+        }
+
+        @media (max-width: 600px) {
+            body { padding: 1rem 0.5rem; }
+            .container { padding: 1.5rem; }
+            h1 { font-size: 2.2rem; }
+            .subhead { font-size: 1rem; }
+            .main-nav a { margin-right: 1rem; font-size: 0.9rem; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <!-- Меню -->
+    <div class="main-nav">
+        <a href="index-en.html">Home</a>
+        <a href="https://github.com/SimNarrative/stories/blob/main/README.md" target="_blank">Stories</a>
+        <a href="dialogues-en.html">Dialogues</a>
+        <a href="feedback-en.html" class="active">Feedback</a>
+        <a href="essays-en.html">Essays</a>
+    </div>
+
+    <!-- Языковой переключатель -->
+    <div class="lang-switch">
+        <a href="feedback.html">РУС</a> · 
+        <a href="feedback-en.html" style="border-color: var(--accent);">ENG</a>
+    </div>
+
+    <h1>Feedback</h1>
+    <div class="subhead">What narrators and readers say</div>
+
+    <div class="feedback-item">
+        <div class="feedback-text">
+            «Excellent stories — in content, composition, and language: very comfortable and pleasant to read. Good material is rare».
+        </div>
+        <div class="feedback-author">— , LitRes narrator</div>
+    </div>
+
+    <div class="feedback-item">
+        <div class="feedback-text">
+            «Your texts give me the opportunity to express myself as an actor. It's not just voiceover, it's creativity. I enjoy working with your material».
+        </div>
+        <div class="feedback-author">— , LitRes narrator, voice of TV channel «Zvezda»</div>
+    </div>
+
+    <div class="feedback-item">
+        <div class="feedback-text">
+            «The stories touched my soul, I cried. They are alive, real. Thank you».
+        </div>
+        <div class="feedback-author">— (published with permission)</div>
+    </div>
+
+    <hr>
+
+    <p style="text-align: center; font-family: var(--font-sans);">
+        If you would like to leave feedback about my stories or the sim‑narrative method — write via <a href="https://github.com/SimNarrative/simnarrative.github.io/issues">GitHub Issues</a> (English/Russian) or Telegram (link coming soon).<br>
+        Every feedback is important for the development of the project.
+    </p>
+
+    <div class="footer">
+        <p>© 2025 Andrey Narrativ | <a href="https://github.com/SimNarrative">GitHub organization</a></p>
+    </div>
+</div>
+</body>
+</html>
