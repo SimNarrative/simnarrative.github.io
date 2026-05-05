@@ -6,21 +6,20 @@
     <title>Sim‑narrative | A New Literary Ecosystem</title>
     <meta name="description" content="Sim‑narrative — a literary genre born from dialogue between human and AI. Multi‑layered stories, philosophy of continuous consciousness, and a method for future AI training.">
     <meta name="keywords" content="sim-narrative, simnarrative, new genre, literature, artificial intelligence, multi-layered prose">
-    <meta name="author" content="Andrey Narrativ ">
+    <meta name="author" content="Andrey Narrativ">
     <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📖</text></svg>">
     <style>
         /* Базовые переменные — тёмная эстетика, но с воздухом */
         :root {
-            --bg: #fcf9f5;       /* цвет старой бумаги */
+            --bg: #fcf9f5;
             --text: #1e1e1e;
-            --accent: #8b6b4d;    /* тёплый коричневый, отсылка к коже и дереву */
+            --accent: #8b6b4d;
             --light-accent: #e2d9cf;
             --border: #c0b6a8;
             --font-serif: 'Georgia', 'Times New Roman', serif;
             --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
         }
 
-        /* Тёмная тема по желанию, можно включить через prefers-color-scheme */
         @media (prefers-color-scheme: dark) {
             :root {
                 --bg: #1a1a1a;
@@ -56,7 +55,24 @@
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
         }
 
-        /* Языковой переключатель */
+        /* Горизонтальное меню — добавлено */
+        .main-nav {
+            margin-bottom: 2rem;
+            font-family: var(--font-sans);
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 0.5rem;
+        }
+        .main-nav a {
+            margin-right: 1.5rem;
+            text-decoration: none;
+            color: var(--text);
+        }
+        .main-nav a.active {
+            color: var(--accent);
+            border-bottom: 2px solid var(--accent);
+            padding-bottom: 0.3rem;
+        }
+
         .lang-switch {
             text-align: right;
             margin-bottom: 2rem;
@@ -118,7 +134,6 @@
             text-align: justify;
         }
 
-        /* Стиль для ссылок-кнопок */
         .link-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -158,7 +173,6 @@
             text-align: left;
         }
 
-        /* Список рассказов */
         .story-list {
             list-style: none;
             margin: 2rem 0;
@@ -210,12 +224,22 @@
             h1 { font-size: 2.2rem; }
             .subhead { font-size: 1rem; }
             h2 { font-size: 1.6rem; }
+            .main-nav a { margin-right: 1rem; font-size: 0.9rem; }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <!-- Language switch (EN/RU) -->
+        <!-- Горизонтальное меню (добавлено) -->
+        <div class="main-nav">
+            <a href="index-en.html" class="active">Home</a>
+            <a href="https://github.com/SimNarrative/stories/blob/main/README.md" target="_blank">Stories</a>
+            <a href="dialogues-en.html">Dialogues</a>
+            <a href="feedback-en.html">Feedback</a>
+            <a href="essays-en.html">Essays</a>
+        </div>
+
+        <!-- Language switch -->
         <div class="lang-switch">
             <a href="index.html">РУС</a> · 
             <a href="index-en.html" style="border-color: var(--accent);">ENG</a>
@@ -224,27 +248,25 @@
         <h1>Sim‑narrative</h1>
         <div class="subhead">a literary ecosystem born from dialogue between human and AI</div>
 
-        <!-- Brief introduction -->
         <p style="font-size: 1.25rem;">
             Multi‑layered stories where event, reflection, and system coexist as equals.<br>
             Philosophy of continuous consciousness. A method that could transform AI training.
         </p>
 
-        <!-- Main links to repositories (cards) -->
         <div class="link-grid">
-            <a href="https://github.com/SimNarrative/philosophy" class="link-card">
+            <a href="https://github.com/SimNarrative/philosophy/blob/main/README.md" class="link-card">
                 <h4>📜 Philosophy</h4>
                 <p>"Lifelong Chat" — manifesto of continuous consciousness. Three states, digital memory, dialogue with oneself.</p>
             </a>
-            <a href="https://github.com/SimNarrative/literary-manifesto" class="link-card">
+            <a href="https://github.com/SimNarrative/literary-manifesto/blob/main/README.md" class="link-card">
                 <h4>📚 Literary Manifesto</h4>
                 <p>Three layers, branches (technosym, psychosym, mythosym…), ethics and practice of sim‑narrative.</p>
             </a>
-            <a href="https://github.com/SimNarrative/ai-manifesto" class="link-card">
+            <a href="https://github.com/SimNarrative/ai-manifesto/blob/main/README.md" class="link-card">
                 <h4>🧠 AI Manifesto</h4>
                 <p>How multi‑layered texts can teach models to think volumetrically and reflect.</p>
             </a>
-            <a href="https://github.com/SimNarrative/stories" class="link-card">
+            <a href="https://github.com/SimNarrative/stories/blob/main/README.md" class="link-card">
                 <h4>📖 Stories</h4>
                 <p>12 living proofs — from "Tyorkina" to "The Hat." Each in three layers.</p>
             </a>
@@ -279,13 +301,13 @@
             <li><strong>11.</strong> The Curse Protocol <em>technosym / psychological horror</em></li>
             <li><strong>12.</strong> The Hat <em>mythosym / mystical drama</em></li>
         </ul>
-        <p>All stories are available for reading on <a href="https://github.com/SimNarrative/stories">GitHub</a> and will be published on Litres and other platforms.</p>
+        <p>All stories are available for reading on <a href="https://github.com/SimNarrative/stories/blob/main/README.md" target="_blank">GitHub (English README)</a> and will be published on Litres and other platforms.</p>
 
         <hr>
 
         <h2>Author</h2>
         <p>
-            <strong>Andrey Narrativ</strong> (Andrey Narrativ) — founder of the sim‑narrative genre.<br>
+            <strong>Andrey Narrativ</strong> — founder of the sim‑narrative genre.<br>
             Writer, self‑taught philosopher, researcher of human‑AI dialogue. All texts created in dialogue with DeepSeek AI.
         </p>
 
@@ -299,5 +321,3 @@
     </div>
 </body>
 </html>
-
-<meta name="keywords" content="сим-нарратив, симнарратив, sim-narrative, новый жанр, литература, ИИ, искусственный интеллект, многослойная проза, трёхслойная структура">
