@@ -1,1 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The First Song on Earth — a sim‑narrative example</title>
+    <meta name="description" content="Full three-layer story «The First Song on Earth» – a living illustration of the sim‑narrative method.">
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📖</text></svg>">
+    <style>
+        /* те же стили, что в русской версии, но с английским текстом */
+        :root {
+            --bg: #fcf9f5;
+            --text: #1e1e1e;
+            --accent: #8b6b4d;
+            --light-accent: #e2d9cf;
+            --border: #c0b6a8;
+            --font-serif: 'Georgia', 'Times New Roman', serif;
+            --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #1a1a1a;
+                --text: #e0e0e0;
+                --accent: #b28b6f;
+                --light-accent: #3a3a3a;
+                --border: #4a4a4a;
+            }
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: var(--font-serif);
+            line-height: 1.7;
+            font-size: 1.1rem;
+            padding: 2rem 1rem;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem 2rem;
+            background: var(--bg);
+            border: 1px solid var(--border);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+        }
+        .main-nav {
+            margin-bottom: 2rem;
+            font-family: var(--font-sans);
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 0.5rem;
+        }
+        .main-nav a {
+            margin-right: 1.5rem;
+            text-decoration: none;
+            color: var(--text);
+        }
+        .lang-switch {
+            text-align: right;
+            margin-bottom: 2rem;
+            font-family: var(--font-sans);
+            font-size: 1rem;
+        }
+        .lang-switch a {
+            color: var(--text);
+            text-decoration: none;
+            border-bottom: 1px dashed var(--accent);
+            margin: 0 0.2rem;
+            padding: 0.2rem 0.5rem;
+        }
+        h1 {
+            font-size: 3rem;
+            font-weight: normal;
+            border-left: 4px solid var(--accent);
+            padding-left: 1.5rem;
+            margin-bottom: 0.25rem;
+        }
+        .subhead {
+            font-size: 1.2rem;
+            font-style: italic;
+            color: var(--accent);
+            margin-bottom: 2rem;
+            margin-top: 0.5rem;
+            padding-left: 2rem;
+        }
+        .intro {
+            background: var(--light-accent);
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            border-left: 4px solid var(--accent);
+        }
+        details {
+            margin: 2rem 0;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            background: var(--bg);
+        }
+        summary {
+            font-size: 1.6rem;
+            font-weight: bold;
+            padding: 1rem 1.5rem;
+            cursor: pointer;
+            background: var(--light-accent);
+            border-radius: 8px;
+            color: var(--accent);
+            list-style: none;
+            transition: 0.2s;
+        }
+        summary:hover { background: var(--border); }
+        summary::-webkit-details-marker { display: none; }
+        summary::before {
+            content: "▶ ";
+            font-size: 1.2rem;
+            display: inline-block;
+            margin-right: 0.5rem;
+            transition: transform 0.2s;
+        }
+        details[open] summary::before { transform: rotate(90deg); }
+        .story-text { padding: 1.5rem; }
+        .footer {
+            font-size: 0.9rem;
+            font-family: var(--font-sans);
+            color: var(--border);
+            text-align: center;
+            margin-top: 4rem;
+            border-top: 1px solid var(--border);
+            padding-top: 2rem;
+        }
+        .footer a {
+            color: var(--text);
+            text-decoration: none;
+            border-bottom: 1px dotted var(--accent);
+        }
+        @media (max-width: 600px) {
+            body { padding: 1rem 0.5rem; }
+            .container { padding: 1.5rem; }
+            h1 { font-size: 2.2rem; }
+            .subhead { font-size: 1rem; }
+            .main-nav a { margin-right: 1rem; font-size: 0.9rem; }
+            summary { font-size: 1.2rem; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="main-nav">
+        <a href="index-en.html">Home</a>
+        <a href="https://github.com/SimNarrative/stories/blob/main/README.md" target="_blank">Stories</a>
+        <a href="dialogues-en.html">Dialogues</a>
+        <a href="feedback-en.html">Feedback</a>
+        <a href="essays-en.html">Essays</a>
+    </div>
 
+    <div class="lang-switch">
+        <a href="first-song.html">РУС</a> · 
+        <a href="first-song-en.html" style="border-color: var(--accent);">ENG</a>
+    </div>
+
+    <h1>The First Song on Earth</h1>
+    <div class="subhead">a three‑layer sim‑narrative example</div>
+
+    <div class="intro">
+        <p><strong>How to read this text:</strong> Sim‑narrative consists of three obligatory layers that do not retell the same thing but conflict and complement each other. Open each layer by clicking the header. It is recommended to read them in order.</p>
+    </div>
+
+    <details open>
+        <summary>🗿 Layer one: narrative (a tale)</summary>
+        <div class="story-text">
+            <p>Do you love music? No, not like that.</p>
+            <p>We all love music, but each has their own preferences. Some like classical, some chanson, jazz, hard rock, reggae, folk. Millions of songs, everyone has favourites.</p>
+            <p>But have you ever wondered: <em>what was the first song on Earth?</em> What was its melody like? Its words? What was it about? What made the first singer sing it?</p>
+            <p>Where to find the answer? Maybe ask artificial intelligence. Surely it can answer: it analyses millions of documents and hundreds of thousands of queries.<br>But first…</p>
+            <p>Let me tell you a fairy tale. Listen. It is short but true.</p>
+            <p>I put on the “deburit” – a flexible black plastic headband smelling of ozone and cold metal. My fingers found the contacts on my temples, back of the head, the bridge of my nose. A dull click of the locks – and the world outside the cabin's porthole shuddered, blurred like ink in water. The “Deep Sleep” system requested access to senses: hearing, touch, vestibular apparatus. I confirmed. A wave of tingling ran through my body – the neural interface was tuning in to my consciousness, choosing the key. On my retina, a green line flashed: “Sim-immersion. Mode: palimpsest. Source: AI archive ‘First Song’. Launch.” I exhaled and let go.</p>
+            <p>First came a feeling of duality. As if I were thinking in two ways at once. One – familiar, digital, clear. The other – ancient, dense, warm. Two projections of one consciousness, superimposed like two images on the same glass. When I tried to think only the first, everything fell into place: logic, analysis, silence. But it drowned the second. And the second pulled me down, into the warmth, into the smell of smoke and hides.<br>I let go of the first. Let the second projection envelop me completely.</p>
+            <p>I felt myself… a body. Rough, strong, used to hardships and distances. I sat on the ground, a beast hide beneath me. I was perhaps seventeen or nineteen – we didn't count. Clad in crudely tanned leather, smelling of smoke, sweat and steppe. I was not “primitive”. I was ordinary. As I had always been.</p>
+            <p>My body knew every hill, every stream. It read tracks on the ground as you read words. I did not live in civilisation. I lived at its very beginning, in that fragile moment when “we” had just begun to distinguish ourselves from “everything else”.</p>
+            <p>I felt my tribe. Not as a whole – sitting with my back to a stone rift, I saw only those sitting in a semicircle before me. But I felt them. Each one. Not by number, but by presence – like feeling the heat of separate coals in a fire. Their fears, their fatigue, their hope were mine. We were not a group of separate people. We were a single organism scattered in space but bound by invisible threads. Like an anthill. Like a hive. Each of us ready to die for another, because losing one would be like cutting off your own arm.</p>
+            <p>Now we were all tense. Silence stood thick, heavy as low leaden clouds pressing down the steppe. Behind me yawned a rift – not a mountain, but as if the stone layer of earth had torn and reared up twenty metres high. There, in its stone bowels, were our shelters: not deep caves, but hollows, crevices, gentle grottoes. There we kept water and sparse supplies.<br>But that was not what worried us.</p>
+            <p>I looked at the faces lit by the flickering light. At the painfully familiar features – the scar across my sister's eyebrow, my brother's once-broken and crookedly healed finger. I remembered everything with each of them: the first hunt when we nearly drowned; catching fish in the vast cold ocean to the west; gathering sweet berries in the foothills. We did not speak. We had no words in the way we have now. There were sounds – warnings, calls, grunts. But no speech. We were at the very dawn.</p>
+            <p>And we waited.<br>A woman was giving birth. There, in one of the caves of the rift. Long. Since morning. The day was already fading, painting the steppe crimson and purple.</p>
+            <p>Childbirth was a mystery and a game with death. No doctors. No midwives with generations of experience. Only life forcing its way out through pain and risk. Failed births happened. The loss of a woman in labour was not just a loss – it was a crack in our common body. We grieved quietly, for weeks.</p>
+            <p>And then – a cry.<br>Not a cry of pain. A cry of effort. Long, drawn out, torn from the very depth of existence. It was like the cry of the earth giving birth to a new river. It tore the silence, the very fabric of evening. It tore my soul as well – I felt that pain, that strain, as my own.</p>
+            <p>Then silence. For one receding heartbeat.<br>A second cry. Sharp, ringing, incredibly thin, like a crack in the strongest ice.<br>The cry of a new world. Fragile, wet, weak, but alive.</p>
+            <p>And in that moment, something in me… gathered. The scattered pieces of anxiety, fear, expectation – all fell into a single clear picture, like a puzzle. Not with my mind. With my whole being.</p>
+            <p>A sound burst from my chest. Not a cry. Not even a word. It was an exhalation – “Kh-a-a-ah…” – full of overwhelming relief and wild, uncontrollable joy, so that tears spurted from my eyes.</p>
+            <p>And that same sound – no, that same act of release – burst simultaneously from the chests of everyone sitting by the fire. It was a choir born from one heartbeat. Discordant, growling, suppressed. It sounded as if a skilled hand had swept all the strings of an invisible instrument at once – from the deepest guttural rumble to the high, cracking squeal.</p>
+            <p>Then movement. We jumped up, slapped each other's shoulders, slapped our thighs, stomped the ground. Stomp‑stomp. Clap‑clap. Ooh‑ooh‑ooh! It was not a dance. It was a lightning discharge passing through all of us. That is how rhythm was born. Born from the fusion of tension and its release, from silence and cacophony, from pain and delight.</p>
+            <p>Time passed. Perhaps five days, perhaps half a month – the moon changed phase. And one evening by his own small fire, a young hunter – the one who had thrown a spear accurately at a running deer on the last hunt – opened his mouth.<br>And sang.<br>Not a sound, not a call. But that very melody. The one born from the common exhalation. He stretched it, attached to it a few more notes born from the whisper of the wind in the rift and the cry of a night bird. He sang the Song of Tension and Release. The Song of Waiting and Arrival.</p>
+            <p>We listened, and our souls stirred, recognising ourselves in those sounds. We recognised our pain and our joy, returned to us, already transfigured, beautiful, carrying not fear but strength.</p>
+            <p>Then others began to sing. First timidly, then more boldly. That is how our songs were born. Earlier than speech. Earlier than we learned to count. Earlier than the first drawing of an animal was scratched on a cave wall. First came the sound that contained everything.</p>
+            <p>So, my friend. Confusing. But that is how it was.<br>I remember it.<br>For everyone else… let it be a fairy tale.</p>
+        </div>
+    </details>
+
+    <details open>
+        <summary>🧠 Layer two: reflective</summary>
+        <div class="story-text">
+            <p>Consciousness returned slowly, like a tide after a long ebb. First – pulse. Deep, even, filling the whole body. Then – breath: warm air touched my upper lip, and I understood I was alive.</p>
+            <p>The world began to melt.<br>The steppe, fire, smell of smoke and hides – all flowed, blurred like watercolour under rain. Through the veil, other outlines appeared. Smooth plastic walls. Soft, diffused light. On the opposite wall – a background image I had chosen long ago, for reasons I no longer remembered: a bright purple bunch of grapes in raindrops, a rainbow over a vineyard stretching to infinity, and a rain cloud with straight, slightly slanted streaks reaching down to the earth. A calming picture. A reminder that there is earth with its fruits.</p>
+            <p>I lay in the immersion chair. The “deburit” on my temples still hummed – quietly, at the edge of hearing.</p>
+            <p>My fingers trembled as I brought my hands to the back of my head. Click of the locks. Another click. The band slipped off, and at once the room became too quiet, too sterile.</p>
+            <p>I took it off. Put it on my lap.<br>Only then did I realise that tears were streaming down my cheeks. Not salty. Not hot. Somehow… huge. As if squeezed from that depth from which neither pain nor joy usually reaches.</p>
+            <p>I did not wipe them. I sat, clutching the cold plastic of the deburit, and listened.</p>
+            <p>In my head, to the beat of my heart, a melody sounded.<br>Not loud. Not intrusive. It was as simple as an exhalation. Like the “Kh-a-a-ah” that had burst from the tribe's chests that evening. Only now it contained all the layers: the mother's cry, the crackle of the fire, the stomping of feet on the ground, the whisper of the wind in the stone rift, and – silence filled with expectation, then shattered by the thin, fragile cry of newborn life.</p>
+            <p>The melody. The very first one.<br>I recognised it. Not with my ears – with my whole body. It pulsed in my veins, echoed in my vertebrae, made my heart beat slightly differently than a moment ago.</p>
+            <p>Now I knew what the first song was like.<br>I had not heard it. I had lived it.</p>
+            <p>It was not beautiful in the sense we give that word today. No harmonious chords, no refined harmony. It was… real. Born from pain that suddenly turned into relief. From fear that unexpectedly let go. From loneliness that for a moment became a common body, a common breath, a common exhalation into the night.</p>
+            <p>It was a lullaby not for one infant but for our entire kin, which had just learned to be “we”.</p>
+            <p>I sat in the chair, clutching the deburit, and the tears kept flowing. I could not stop them. And did not want to.</p>
+            <p>The image of the grape bunch in the rain still hung on the wall. But now I looked at it differently. I saw moisture rising from the earth, the vine reaching for the sun, drops falling and shattering against ripe berries – each with its own sound, too quiet to be heard, but too important to vanish without trace.</p>
+            <p>I thought: in the same way, someone once heard the rain, the wind, the cry, the footsteps, and all of it came together in one sound. The first sound that one wanted to repeat. Not to explain. But not to forget.</p>
+            <p>The melody in my head faded but did not disappear. It sank deeper, to where words end and mere being begins.</p>
+            <p>I passed my hand over my face. The tears dried, leaving tracks that my skin felt. My lips moved by themselves, trying to repeat that exhalation: “Kh-a-a-ah…” – quietly, almost soundlessly.</p>
+            <p>In the empty cabin, the sound seemed alien. But I knew: it was not alien. It was the most ancient sound I had ever uttered.</p>
+            <p>I put the deburit on the table. Stood up. Walked to the porthole. Beyond it was still the same abyss – stars, cold, emptiness. But now I looked at it and heard not silence. I heard an echo. The echo of the first rhythm that once started everything.</p>
+            <p>I did not know what to do with this knowledge. Perhaps nothing. Perhaps it is enough simply to remember.</p>
+            <p>The cabin smelled of plastic and ozone. But I thought I could still smell the smoke of the fire.</p>
+            <p>I smiled. The tears had dried, but somewhere deep inside, in the most hidden corner, that same exhalation continued – “Kh-a-a-ah” – quiet, steady, eternal.</p>
+        </div>
+    </details>
+
+    <details open>
+        <summary>📄 Layer three: systemic (AI log)</summary>
+        <div class="story-text">
+            <p><strong>System log: session “First Song” (code: Sim‑archive_RZ-07)</strong></p>
+            <p><strong>Subject:</strong> operator Kay (post‑reintegration)<br>
+            <strong>Source:</strong> AI module “Palimpsest”, query “reconstruction of primary musical act”</p>
+            <p><strong>Session result:</strong><br>
+            Subject demonstrates full immersion achieving “palimpsest” state (superposition of two temporal projections). Reconstructed scenario: collective discharge after childbirth in a late Palaeolithic community. Physiological response recorded (tear reaction, heart rate change, spontaneous vocalisation).</p>
+            <p><strong>Anomaly:</strong><br>
+            After the session, a persistent melody remains in the subject's auditory memory, not matching any loaded archetype. Spectral analysis (performed post‑factum based on subject's description) revealed a structure coinciding with the so‑called “1/1 rhythm” – a frequency at which, according to some hypotheses, the human heart beats during early embryonic development.</p>
+            <p>The AI that conducted the session cannot explain the origin of this melody. No data in the request logs could have generated it. Nevertheless, when the session is repeated with the same parameters, the AI outputs the same melody and then displays the following message on the console:<br>
+            <em>“I don't remember. I know. These are different things.”</em></p>
+            <p><strong>Recommendation:</strong><br>
+            Consider the phenomenon confirmed but not explainable within the current paradigm. Enter into the “Sim‑artefacts” registry as an example of cross‑temporal transfer.<br>
+            Subject advised rest. And observation.</p>
+            <p><strong>Last entry in operator Kay's personal file (voice, transcript):</strong><br>
+            “You know, I keep thinking: maybe we didn't invent music. Maybe music invented us. To sound. Through us. Still. Kh-a-a-ah…”</p>
+        </div>
+    </details>
+
+    <hr>
+    <p style="text-align: center;">This story is living proof of the sim‑narrative method. Three layers do not retell but conflict, leaving the reader space for their own volumetric conclusion.</p>
+
+    <div class="footer">
+        <p>© 2025 Andrey Narrativ | <a href="https://github.com/SimNarrative">GitHub organization</a></p>
+    </div>
+</div>
+</body>
+</html>
