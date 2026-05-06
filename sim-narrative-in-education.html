@@ -1,1 +1,216 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сим‑нарратив в образовании — методичка для преподавателей</title>
+    <meta name="description" content="Как объяснять метод сим‑нарратив студентам, примеры упражнений, темы для курсовых и дипломных работ.">
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📖</text></svg>">
+    <style>
+        :root {
+            --bg: #fcf9f5;
+            --text: #1e1e1e;
+            --accent: #8b6b4d;
+            --light-accent: #e2d9cf;
+            --border: #c0b6a8;
+            --font-serif: 'Georgia', 'Times New Roman', serif;
+            --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #1a1a1a;
+                --text: #e0e0e0;
+                --accent: #b28b6f;
+                --light-accent: #3a3a3a;
+                --border: #4a4a4a;
+            }
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: var(--font-serif);
+            line-height: 1.7;
+            font-size: 1.1rem;
+            padding: 2rem 1rem;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+            background: var(--bg);
+            border: 1px solid var(--border);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+        }
+        .main-nav {
+            margin-bottom: 2rem;
+            font-family: var(--font-sans);
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 0.5rem;
+        }
+        .main-nav a {
+            margin-right: 1.5rem;
+            text-decoration: none;
+            color: var(--text);
+        }
+        .main-nav a.active {
+            color: var(--accent);
+            border-bottom: 2px solid var(--accent);
+            padding-bottom: 0.3rem;
+        }
+        .lang-switch {
+            text-align: right;
+            margin-bottom: 2rem;
+            font-family: var(--font-sans);
+            font-size: 1rem;
+        }
+        .lang-switch a {
+            color: var(--text);
+            text-decoration: none;
+            border-bottom: 1px dashed var(--accent);
+            margin: 0 0.2rem;
+            padding: 0.2rem 0.5rem;
+        }
+        h1 {
+            font-size: 3rem;
+            font-weight: normal;
+            border-left: 4px solid var(--accent);
+            padding-left: 1.5rem;
+            margin-bottom: 0.25rem;
+        }
+        .subhead {
+            font-size: 1.2rem;
+            font-style: italic;
+            color: var(--accent);
+            margin-bottom: 2rem;
+            margin-top: 0.5rem;
+            padding-left: 2rem;
+        }
+        h2 {
+            font-size: 2rem;
+            font-weight: normal;
+            margin: 2rem 0 1rem;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 0.3rem;
+        }
+        h3 {
+            font-size: 1.4rem;
+            margin: 1.5rem 0 0.5rem;
+            color: var(--accent);
+        }
+        .tip {
+            background: var(--light-accent);
+            padding: 1rem 2rem;
+            border-left: 4px solid var(--accent);
+            margin: 1.5rem 0;
+            border-radius: 4px;
+        }
+        .example {
+            margin: 1rem 0 1rem 1rem;
+            padding-left: 1rem;
+            border-left: 2px solid var(--border);
+        }
+        hr { margin: 2rem 0; border: none; border-top: 1px solid var(--border); }
+        .footer {
+            font-size: 0.9rem;
+            font-family: var(--font-sans);
+            color: var(--border);
+            text-align: center;
+            margin-top: 4rem;
+            border-top: 1px solid var(--border);
+            padding-top: 2rem;
+        }
+        .footer a {
+            color: var(--text);
+            text-decoration: none;
+            border-bottom: 1px dotted var(--accent);
+        }
+        @media (max-width: 600px) {
+            body { padding: 1rem 0.5rem; }
+            .container { padding: 1.5rem; }
+            h1 { font-size: 2.2rem; }
+            .subhead { font-size: 1rem; }
+            .main-nav a { margin-right: 1rem; font-size: 0.9rem; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="main-nav">
+        <a href="index.html">Главная</a>
+        <a href="https://github.com/SimNarrative/stories/blob/main/README.ru.md" target="_blank">Рассказы</a>
+        <a href="dialogues.html">Переписки</a>
+        <a href="feedback.html">Отзывы</a>
+        <a href="essays.html">Эссе</a>
+    </div>
 
+    <div class="lang-switch">
+        <a href="sim-narrative-in-education.html" style="border-color: var(--accent);">РУС</a> · 
+        <a href="sim-narrative-in-education-en.html">ENG</a>
+    </div>
+
+    <h1>Сим‑нарратив в образовании</h1>
+    <div class="subhead">методичка для преподавателей: как объяснять метод студентам</div>
+
+    <div class="essay-content">
+        <p>Сим‑нарратив — молодой, но уже работающий метод объёмного письма. Его можно и нужно интегрировать в университетские курсы по литературному мастерству, теории текста, цифровой культуре и даже философии. Ниже — практические советы для преподавателей, а также темы для курсовых и дипломных работ.</p>
+
+        <h2>1. Что нужно знать преподавателю перед лекцией</h2>
+        <p><strong>Сим‑нарратив — не жанр в классическом смысле.</strong> Это инженерный протокол, который можно применить к любому материалу. Три обязательных слоя: событийный, рефлексивный, системный. Их конфликт — двигатель смысла. Если вы поймёте это сами, студенты поймут легче.</p>
+        <div class="tip">
+            🎓 <strong>Совет:</strong> Начните с рассказа «Первая песня на земле» (есть на этом сайте). Разберите вместе со студентами все три слоя. Спросите: где здесь событие? Где рефлексия? Где система? Обычно это срабатывает лучше любой теории.
+        </div>
+
+        <h2>2. Упражнения для студентов</h2>
+        <h3>Упражнение 1. Трансформация обычного текста</h3>
+        <p>Возьмите короткую новеллу или даже пост из соцсетей. Попросите студентов переписать его в трёх слоях: событие (сухие факты), дневник героя (чувства) и протокол (вид системы — суда, больницы, соцслужбы, алгоритма). Обсудите, как изменился смысл.</p>
+        <h3>Упражнение 2. Слои в реальной жизни</h3>
+        <p>Попросите студентов описать одно событие из их жизни (например, сдачу экзамена) в трёх версиях: как его засняла бы камера; как они это пережили; как это записано в официальном документе (зачётка, приказ). Это включит личный опыт и покажет, что сим‑нарратив не абстракция.</p>
+        <h3>Упражнение 3. Создание мини-сим-нарратива</h3>
+        <p>Задание на дом: написать рассказ объёмом не больше страницы, но строго в трёх слоях. Можно использовать любые маркеры («Событие:», «Дневник:», «Протокол:»). Лучшие работы потом выложить в общий чат для обсуждения.</p>
+
+        <h2>3. Типичные ошибки студентов и как их поправлять</h2>
+        <ul>
+            <li><strong>Слои не конфликтуют, а повторяют одно и то же.</strong> Объясните, что задача — показать противоречие, а не пересказ.</li>
+            <li><strong>Системный слой написан «человеческим» языком.</strong> Он должен быть сухим, канцелярским, похожим на вывод компьютера или чиновника.</li>
+            <li><strong>Студенты забывают про рефлексивный слой.</strong> Напомните, что без личного переживания текст становится плоским.</li>
+        </ul>
+
+        <h2>4. Предпосылки для научных работ: метод vs жанр</h2>
+        <p>Сим‑нарратив ставит перед исследователями два главных вопроса. Они могут стать основой для курсовых и дипломных проектов.</p>
+        
+        <div class="tip">
+            <strong>Тема 1. Сим‑нарратив — новый литературный метод или новый жанр?</strong><br>
+            <em>Предпосылки:</em> В современном литературоведении нет чёткого разграничения «метода» и «жанра». Некоторые исследователи (Лотман, Бахтин) рассматривают жанр как устойчивую модель, а метод — как способ её реализации. Сим‑нарратив с его жёсткими правилами (три слоя, конфликт) напоминает метод. Но наличие узнаваемых черт, набора приёмов и уже сложившихся образцов (рассказы Андрея Нарратива) позволяет говорить о формировании нового жанра. <strong>Вопрос для студента:</strong> можно ли считать сим‑нарратив самостоятельным жанром или это только методика, приложимая к разным жанрам? Аргументировать примерами.
+        </div>
+
+        <div class="tip">
+            <strong>Тема 2. Возникновение новых литературных жанров в российском обществе / литературе (на примере сим‑нарратива)</strong><br>
+            <em>Предпосылки:</em> Появление новых жанров всегда связано с культурными, технологическими и социальными сдвигами. В России 2010–2020‑х годов — цифровизация, мессенджеры, клиповое мышление, новые формы бюрократии (Госуслуги, электронные протоколы). Сим‑нарратив возникает как прямой ответ на этот контекст. Можно сравнить его с появлением «лагерной прозы» или «деревенской прозы» в XX веке — тоже реакция на реальность. <strong>Вопрос для студента:</strong> какие именно российские реалии породили трёхслойное письмо? Почему аналогичные методы на Западе не оформились в целостный жанр? Исследовать культурные корни.
+        </div>
+
+        <h2>5. Дополнительные темы для исследований</h2>
+        <ul>
+            <li>Сим‑нарратив и постмодернизм: сходство и различия (отказ от иронии, инженерный подход).</li>
+            <li>Системный слой как новый тип повествования: от протоколов к художественности.</li>
+            <li>Сим‑нарратив в обучении ИИ: как трёхслойные тексты могут тренировать модели к рефлексии.</li>
+            <li>Эволюция русского литературного метода: от формалистов до сим‑нарратива.</li>
+        </ul>
+
+        <div class="tip">
+            💡 <strong>Для преподавателей:</strong> вы можете предложить студентам написать курсовую работу в форме сим‑нарратива — например, изложить теорию вопроса событийно, затем дневник исследователя, затем протокол эксперимента. Это не только развивает навыки письма, но и закрепляет понимание метода.
+        </div>
+
+        <h2>6. Где брать материалы</h2>
+        <p>Все тексты, манифесты и примеры доступны на GitHub-организации <a href="https://github.com/SimNarrative">SimNarrative</a>, а также на этом сайте. Рассказы опубликованы на Author.today и ЛитРес. Для научных работ можно цитировать философский, литературный и AI‑манифесты (лицензия CC BY 4.0).</p>
+    </div>
+
+    <hr>
+    <p style="text-align: center;">Эта методичка — открытый документ. Если вы используете сим‑нарратив в преподавании, напишите автору (Andrey Narrativ) через GitHub. Будет интересно обменяться опытом.</p>
+
+    <div class="footer">
+        <p>© 2025 Андрей Нарратив | <a href="https://github.com/SimNarrative">GitHub-организация</a></p>
+    </div>
+</div>
+</body>
+</html>
