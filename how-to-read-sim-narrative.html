@@ -1,1 +1,208 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Как читать сим‑нарратив — инструкция для читателя</title>
+    <meta name="description" content="Практическое руководство по чтению трёхслойных текстов. Как различать слои, замечать конфликты и собирать объём.">
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📖</text></svg>">
+    <style>
+        :root {
+            --bg: #fcf9f5;
+            --text: #1e1e1e;
+            --accent: #8b6b4d;
+            --light-accent: #e2d9cf;
+            --border: #c0b6a8;
+            --font-serif: 'Georgia', 'Times New Roman', serif;
+            --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #1a1a1a;
+                --text: #e0e0e0;
+                --accent: #b28b6f;
+                --light-accent: #3a3a3a;
+                --border: #4a4a4a;
+            }
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: var(--font-serif);
+            line-height: 1.7;
+            font-size: 1.1rem;
+            padding: 2rem 1rem;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+            background: var(--bg);
+            border: 1px solid var(--border);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+        }
+        .main-nav {
+            margin-bottom: 2rem;
+            font-family: var(--font-sans);
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 0.5rem;
+        }
+        .main-nav a {
+            margin-right: 1.5rem;
+            text-decoration: none;
+            color: var(--text);
+        }
+        .main-nav a.active {
+            color: var(--accent);
+            border-bottom: 2px solid var(--accent);
+            padding-bottom: 0.3rem;
+        }
+        .lang-switch {
+            text-align: right;
+            margin-bottom: 2rem;
+            font-family: var(--font-sans);
+            font-size: 1rem;
+        }
+        .lang-switch a {
+            color: var(--text);
+            text-decoration: none;
+            border-bottom: 1px dashed var(--accent);
+            margin: 0 0.2rem;
+            padding: 0.2rem 0.5rem;
+        }
+        h1 {
+            font-size: 3rem;
+            font-weight: normal;
+            border-left: 4px solid var(--accent);
+            padding-left: 1.5rem;
+            margin-bottom: 0.25rem;
+        }
+        .subhead {
+            font-size: 1.2rem;
+            font-style: italic;
+            color: var(--accent);
+            margin-bottom: 2rem;
+            margin-top: 0.5rem;
+            padding-left: 2rem;
+        }
+        h2 {
+            font-size: 2rem;
+            font-weight: normal;
+            margin: 2rem 0 1rem;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 0.3rem;
+        }
+        h3 {
+            font-size: 1.4rem;
+            margin: 1.5rem 0 0.5rem;
+            color: var(--accent);
+        }
+        .tip {
+            background: var(--light-accent);
+            padding: 1rem 2rem;
+            border-left: 4px solid var(--accent);
+            margin: 1.5rem 0;
+            border-radius: 4px;
+        }
+        .example {
+            margin: 1rem 0 1rem 1rem;
+            padding-left: 1rem;
+            border-left: 2px solid var(--border);
+        }
+        hr {
+            margin: 2rem 0;
+            border: none;
+            border-top: 1px solid var(--border);
+        }
+        .footer {
+            font-size: 0.9rem;
+            font-family: var(--font-sans);
+            color: var(--border);
+            text-align: center;
+            margin-top: 4rem;
+            border-top: 1px solid var(--border);
+            padding-top: 2rem;
+        }
+        .footer a {
+            color: var(--text);
+            text-decoration: none;
+            border-bottom: 1px dotted var(--accent);
+        }
+        @media (max-width: 600px) {
+            body { padding: 1rem 0.5rem; }
+            .container { padding: 1.5rem; }
+            h1 { font-size: 2.2rem; }
+            .subhead { font-size: 1rem; }
+            .main-nav a { margin-right: 1rem; font-size: 0.9rem; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="main-nav">
+        <a href="index.html">Главная</a>
+        <a href="https://github.com/SimNarrative/stories/blob/main/README.ru.md" target="_blank">Рассказы</a>
+        <a href="dialogues.html">Переписки</a>
+        <a href="feedback.html">Отзывы</a>
+        <a href="essays.html">Эссе</a>
+    </div>
 
+    <div class="lang-switch">
+        <a href="how-to-read-sim-narrative.html" style="border-color: var(--accent);">РУС</a> · 
+        <a href="how-to-read-sim-narrative-en.html">ENG</a>
+    </div>
+
+    <h1>Как читать сим‑нарратив</h1>
+    <div class="subhead">инструкция для читателя: различать слои, замечать конфликты, собирать объём</div>
+
+    <div class="essay-content">
+        <p>Вы взяли в руки текст, помеченный как сим‑нарратив. Он может выглядеть непривычно: иногда это череда фрагментов с разными заголовками («Событие», «Дневник», «Протокол»), иногда — цельный поток без маркеров. Но внутри всегда скрыта трёхслойная структура. Как её распознать и, главное, как извлечь из неё максимум?</p>
+
+        <h2>1. Три слоя: что это и как их найти</h2>
+        <p><strong>Событийный слой</strong> — это то, что можно снять на камеру. Действие, диалог, последовательность событий. Язык обычно нейтральный, без глубоких эмоций. Пример: «Он открыл дверь. В комнате никого не было».</p>
+        <p><strong>Рефлексивный слой</strong> — внутренний монолог, чувства, воспоминания. Часто маркируется курсивом, местоимением «я», прямыми обращениями к читателю. Здесь герой сомневается, страдает, радуется. Пример: «Сердце колотилось. Неужели я опоздал?».</p>
+        <p><strong>Системный слой</strong> — взгляд со стороны: протокол, отчёт, статистика, документ, лог программы. Здесь нет личности, есть только фиксация. Пример: «Вход в помещение зафиксирован в 14:03. Продолжительность пребывания — 2 минуты».</p>
+        <div class="tip">
+            <strong>🧠 Совет:</strong> Если вы видите в тексте нечто похожее на выписку из базы данных, технический регламент или сухой перечень — это, скорее всего, системный слой. Не пропускайте его, он часто содержит ключ к разгадке.
+        </div>
+
+        <h2>2. Почему слои конфликтуют — это не ошибка</h2>
+        <p>В обычной литературе все элементы текста служат общей идее автора. В сим‑нарративе слои <strong>намеренно противоречат друг другу</strong>. В событийном слое герой может совершить благородный поступок, в рефлексивном — ненавидеть того, кому помогает, а в системном — оказаться просто «юнитом, выполнившим задачу». Задача читателя — не примирить эти версии, а заметить зазор. Именно в этом промежутке рождается объёмный смысл.</p>
+        <div class="tip">
+            <strong>🔍 Совет:</strong> Когда видите несовпадение (например, в одном слое герой плачет от счастья, а в другом протокол фиксирует «повышенный уровень кортизола»), не ищите ошибку. Спросите себя: «Почему автор показывает мне эти разные углы? Что я могу вынести из их столкновения?»
+        </div>
+
+        <h2>3. Пример из живой практики: «Первая песня на земле»</h2>
+        <p>Вернёмся к нашему рассказу. Вот как работают слои:</p>
+        <div class="example">
+            <strong>Событийный слой (сказка):</strong> Племя переживает роды, раздаётся крик, затем общий выдох, а позже молодой охотник пропевает мелодию.<br>
+            <strong>Рефлексивный слой:</strong> Оператор Кей после сеанса плачет, ощущает связь с древним, слышит мотив в своём сердце. Это личное, почти священное переживание.<br>
+            <strong>Системный слой (лог ИИ):</strong> «Субъект демонстрирует полное погружение. Зафиксирован физиологический отклик. Аномалия: мотив не соответствует загруженным архетипам. Рекомендовано наблюдение».
+        </div>
+        <p>Конфликт: сказка утверждает «песня родилась от радости», дневник — «я прожил это как реальность», а лог — «аномалия, природа необъяснима». Читатель получает не готовый ответ, а поле для размышлений. Это не «недоговорённость», а инженерный приём.</p>
+
+        <h2>4. Практические рекомендации для первого чтения</h2>
+        <ul>
+            <li><strong>Читайте все три слоя подряд</strong>, не перескакивая. Сначала событие, потом рефлексия, потом протокол. Обычно так задумано.</li>
+            <li><strong>Отмечайте несовпадения</strong> (можно карандашом или мысленно). Они важнее совпадений.</li>
+            <li><strong>Не ищите единого «авторского послания»</strong>. Его нет. Смысл рождается у вас в голове на пересечении слоёв.</li>
+            <li><strong>Сравнивайте своё впечатление</strong> с тем, что пишут другие читатели (если есть обсуждение). Сим‑нарратив часто даёт разные эмоции разным людям — это нормально.</li>
+        </ul>
+
+        <h2>5. Что делать, если текст без маркеров?</h2>
+        <p>Некоторые сим‑нарративы не подписывают слои, а смешивают их в одном потоке. Распознать их можно по резким сменам регистра: от художественной прозы к техническому описанию, от прямой речи к цифрам. Это как фильм, где режиссёр не предупреждает о смене камеры. Придётся быть внимательным. Но привыкнув, вы начнёте замечать эти переходы автоматически.</p>
+
+        <h2>Заключение: от пассивности к конструкции</h2>
+        <p>Сим‑нарратив не развлекает, не учит и не манипулирует. Он <strong>конструирует пространство для мысли</strong>. Читатель перестаёт быть потребителем готовых смыслов и становится соавтором. Если вы чувствуете, что после прочтения у вас осталось больше вопросов, чем ответов — это не провал, это успех. Именно так рождается объём. Добро пожаловать в новое измерение литературы.</p>
+    </div>
+
+    <hr>
+    <p style="text-align: center;">Эта инструкция — часть цикла материалов о сим‑нарративе. Другие эссе и манифесты можно найти в <a href="https://github.com/SimNarrative">GitHub-организации</a>.</p>
+
+    <div class="footer">
+        <p>© 2025 Андрей Нарратив | <a href="https://github.com/SimNarrative">GitHub-организация</a></p>
+    </div>
+</div>
+</body>
+</html>
