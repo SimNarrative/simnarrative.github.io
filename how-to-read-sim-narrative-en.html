@@ -1,1 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to read sim‑narrative — a reader's guide</title>
+    <meta name="description" content="Practical guide to reading three‑layer texts. How to distinguish layers, notice conflicts, and assemble volume.">
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📖</text></svg>">
+    <style>
+        :root {
+            --bg: #fcf9f5;
+            --text: #1e1e1e;
+            --accent: #8b6b4d;
+            --light-accent: #e2d9cf;
+            --border: #c0b6a8;
+            --font-serif: 'Georgia', 'Times New Roman', serif;
+            --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #1a1a1a;
+                --text: #e0e0e0;
+                --accent: #b28b6f;
+                --light-accent: #3a3a3a;
+                --border: #4a4a4a;
+            }
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: var(--font-serif);
+            line-height: 1.7;
+            font-size: 1.1rem;
+            padding: 2rem 1rem;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+            background: var(--bg);
+            border: 1px solid var(--border);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+        }
+        .main-nav {
+            margin-bottom: 2rem;
+            font-family: var(--font-sans);
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 0.5rem;
+        }
+        .main-nav a {
+            margin-right: 1.5rem;
+            text-decoration: none;
+            color: var(--text);
+        }
+        .main-nav a.active {
+            color: var(--accent);
+            border-bottom: 2px solid var(--accent);
+            padding-bottom: 0.3rem;
+        }
+        .lang-switch {
+            text-align: right;
+            margin-bottom: 2rem;
+            font-family: var(--font-sans);
+            font-size: 1rem;
+        }
+        .lang-switch a {
+            color: var(--text);
+            text-decoration: none;
+            border-bottom: 1px dashed var(--accent);
+            margin: 0 0.2rem;
+            padding: 0.2rem 0.5rem;
+        }
+        h1 {
+            font-size: 3rem;
+            font-weight: normal;
+            border-left: 4px solid var(--accent);
+            padding-left: 1.5rem;
+            margin-bottom: 0.25rem;
+        }
+        .subhead {
+            font-size: 1.2rem;
+            font-style: italic;
+            color: var(--accent);
+            margin-bottom: 2rem;
+            margin-top: 0.5rem;
+            padding-left: 2rem;
+        }
+        h2 {
+            font-size: 2rem;
+            font-weight: normal;
+            margin: 2rem 0 1rem;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 0.3rem;
+        }
+        h3 {
+            font-size: 1.4rem;
+            margin: 1.5rem 0 0.5rem;
+            color: var(--accent);
+        }
+        .tip {
+            background: var(--light-accent);
+            padding: 1rem 2rem;
+            border-left: 4px solid var(--accent);
+            margin: 1.5rem 0;
+            border-radius: 4px;
+        }
+        .example {
+            margin: 1rem 0 1rem 1rem;
+            padding-left: 1rem;
+            border-left: 2px solid var(--border);
+        }
+        hr {
+            margin: 2rem 0;
+            border: none;
+            border-top: 1px solid var(--border);
+        }
+        .footer {
+            font-size: 0.9rem;
+            font-family: var(--font-sans);
+            color: var(--border);
+            text-align: center;
+            margin-top: 4rem;
+            border-top: 1px solid var(--border);
+            padding-top: 2rem;
+        }
+        .footer a {
+            color: var(--text);
+            text-decoration: none;
+            border-bottom: 1px dotted var(--accent);
+        }
+        @media (max-width: 600px) {
+            body { padding: 1rem 0.5rem; }
+            .container { padding: 1.5rem; }
+            h1 { font-size: 2.2rem; }
+            .subhead { font-size: 1rem; }
+            .main-nav a { margin-right: 1rem; font-size: 0.9rem; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="main-nav">
+        <a href="index-en.html">Home</a>
+        <a href="https://github.com/SimNarrative/stories/blob/main/README.md" target="_blank">Stories</a>
+        <a href="dialogues-en.html">Dialogues</a>
+        <a href="feedback-en.html">Feedback</a>
+        <a href="essays-en.html">Essays</a>
+    </div>
 
+    <div class="lang-switch">
+        <a href="how-to-read-sim-narrative.html">РУС</a> · 
+        <a href="how-to-read-sim-narrative-en.html" style="border-color: var(--accent);">ENG</a>
+    </div>
+
+    <h1>How to read sim‑narrative</h1>
+    <div class="subhead">a reader's guide: distinguish layers, notice conflicts, assemble volume</div>
+
+    <div class="essay-content">
+        <p>You are holding a text marked as sim‑narrative. It may look unusual: sometimes a sequence of fragments with different headings ("Event", "Diary", "Protocol"), sometimes a seamless flow without markers. But inside there is always a three‑layer structure. How to recognise it and, most importantly, how to get the most out of it?</p>
+
+        <h2>1. The three layers: what they are and how to find them</h2>
+        <p><strong>Event layer</strong> – what could be captured on camera. Action, dialogue, sequence of events. The language is usually neutral, without deep emotion. Example: "He opened the door. The room was empty."</p>
+        <p><strong>Reflective layer</strong> – inner monologue, feelings, memories. Often marked by italics, the pronoun "I", direct addresses to the reader. Here the character doubts, suffers, rejoices. Example: "My heart was pounding. Had I arrived too late?"</p>
+        <p><strong>Systemic layer</strong> – an external view: protocol, report, statistics, document, program log. There is no personality here, only recording. Example: "Entry into the premises recorded at 14:03. Duration of stay – 2 minutes."</p>
+        <div class="tip">
+            <strong>🧠 Tip:</strong> If you see something resembling a database excerpt, a technical regulation, or a dry list – it's most likely the systemic layer. Don't skip it; it often contains the key to the puzzle.
+        </div>
+
+        <h2>2. Why layers conflict – it's not a mistake</h2>
+        <p>In conventional literature, all elements of the text serve the author's overall idea. In sim‑narrative, layers are <strong>deliberately made to contradict each other</strong>. In the event layer, a hero may perform a noble deed; in the reflective layer, they may hate the person they are helping; in the systemic layer, they may be just "a unit that performed a task". The reader's task is not to reconcile these versions but to notice the gap. It is in that interval that volumetric meaning is born.</p>
+        <div class="tip">
+            <strong>🔍 Tip:</strong> When you see a discrepancy (for example, in one layer a character cries with joy, while in another a protocol records "elevated cortisol level"), don't look for a mistake. Ask yourself: "Why does the author show me these different angles? What can I learn from their collision?"
+        </div>
+
+        <h2>3. A living example: "The First Song on Earth"</h2>
+        <p>Let's return to our story. Here's how the layers work:</p>
+        <div class="example">
+            <strong>Event layer (the tale):</strong> The tribe experiences childbirth, a cry is heard, then a collective exhalation, and later a young hunter sings a melody.<br>
+            <strong>Reflective layer:</strong> Operator Kay after the session cries, feels a connection to the ancient, hears the motif in his heart. A personal, almost sacred experience.<br>
+            <strong>Systemic layer (AI log):</strong> "Subject demonstrates full immersion. Physiological response recorded. Anomaly: motif does not match loaded archetypes. Observation recommended."
+        </div>
+        <p>The conflict: the tale says "the song was born from joy", the diary says "I lived it as reality", and the log says "anomaly, nature unexplained". The reader does not receive a ready‑made answer but a field for reflection. This is not "incompleteness" – it's an engineering device.</p>
+
+        <h2>4. Practical tips for first‑time reading</h2>
+        <ul>
+            <li><strong>Read all three layers in sequence</strong>, without skipping. First event, then reflection, then protocol. This is usually the intended order.</li>
+            <li><strong>Note the discrepancies</strong> (mentally or with a pencil). They matter more than the matches.</li>
+            <li><strong>Don't look for a single "author's message"</strong>. There is none. Meaning is born in your mind at the intersection of the layers.</li>
+            <li><strong>Compare your impressions</strong> with what other readers say (if there is discussion). Sim‑narrative often evokes different emotions in different people – that's normal.</li>
+        </ul>
+
+        <h2>5. What if the text has no layer markers?</h2>
+        <p>Some sim‑narratives do not label the layers but mix them in a single stream. You can recognise them by abrupt register changes: from literary prose to technical description, from direct speech to numbers. It's like a film where the director doesn't warn about camera changes. You'll have to be attentive. But once you get used to it, you'll start noticing these transitions automatically.</p>
+
+        <h2>Conclusion: from passivity to construction</h2>
+        <p>Sim‑narrative does not entertain, teach, or manipulate. It <strong>constructs a space for thought</strong>. The reader ceases to be a consumer of ready‑made meanings and becomes a co‑author. If after reading you feel that you are left with more questions than answers – that is not a failure, it is a success. That is how volume is born. Welcome to a new dimension of literature.</p>
+    </div>
+
+    <hr>
+    <p style="text-align: center;">This guide is part of a series of materials on sim‑narrative. Other essays and manifestos can be found in the <a href="https://github.com/SimNarrative">GitHub organisation</a>.</p>
+
+    <div class="footer">
+        <p>© 2025 Andrey Narrativ | <a href="https://github.com/SimNarrative">GitHub organisation</a></p>
+    </div>
+</div>
+</body>
+</html>
